@@ -9,7 +9,7 @@ All construction of this framework is based on the methodologies of [@ofjaaah](h
 
 ## Usage 💡
 
-![Help Menu](https://user-images.githubusercontent.com/73609472/119388792-274c4b00-bca1-11eb-8df0-be2b87d9d7bd.png)
+![Help Menu](https://user-images.githubusercontent.com/73609472/119419242-3b5b7100-bcd0-11eb-9c2d-1afbfaf84122.png)
 ### Basic usage
 ```
 ❯ ./recon.sh -d domain.com -w /path/to/your/wordlist.txt
