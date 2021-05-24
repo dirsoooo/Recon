@@ -1,0 +1,470 @@
+googler 4.3.2
+2021-01-21
+
+- Fix html class of result nodes (#393, fixes #392)
+- Do not sabotage stdin of url_handler (#386)
+
+-------------------------------------------------------------------------------
+
+googler 4.3.1
+2020-10-10
+
+- several important parser fixes
+- retire Python v3.5, add v3.9
+
+-------------------------------------------------------------------------------
+
+googler 4.3
+2020-10-10
+
+- fix recent break due to server-side changes
+- option `-e`/`--exclude` to exclude site from results
+- option `-g`/`--geoloc` to specify geolocation
+- replace uuid1 with uuid4 in request
+
+-------------------------------------------------------------------------------
+
+googler 4.2
+2020-07-28
+
+- support GUI platform browsers on WSL
+- support Wayland native copier `wl-copy`
+- program options `--ipv4`, `--ipv6`; ipv4 preferred by default
+- deduplicate results
+- fix sitelinks parsing
+- combine consecutive whitespaces
+- fix extraction of matched keywords
+- fix match highlighting
+- no additional blank line for empty abstracts
+- undocumented debug option `--parse` to parse dumped HTML
+
+-------------------------------------------------------------------------------
+
+googler 4.1
+2020-04-30
+
+What's in?
+- search Google Videos
+- options `--from` and `--to` to specify date range for search
+- update parser to handle new layout for Google News results
+- strip trailing comma from metadata
+- add auto-generated packages for new distros, remove obsolete
+
+-------------------------------------------------------------------------------
+
+googler 4.0
+2019-11-27
+
+What's in?
+- Switch to modern UA and fix parser to handle new result format
+- Text-wrapping
+
+-------------------------------------------------------------------------------
+
+googler 3.9
+2019-05-30
+
+What's in?
+- fix issue - `googler` showing "No results."
+- show matched keywords in bold in result abstracts
+- option `--colorize` for more control on colors
+- better support for colors on Windows
+- switch to CircleCI from Travis
+- option `--noua` is deprecated (noop) and will be removed in future
+
+-------------------------------------------------------------------------------
+
+googler 3.8
+2019-03-27
+
+What's in?
+- A complete parser rewrite
+- Visual redesign of the output format
+- Text-wrapping for CJK wide characters
+- Refresh current page on URL expansion toggle
+- Available on Raspbian testing and Chocolatey
+- Several important fixes
+
+-------------------------------------------------------------------------------
+
+googler 3.7.1
+2018-10-10
+
+What's in?
+- Custom user agent
+- Fix to unescape auto-completions
+
+-------------------------------------------------------------------------------
+
+googler 3.7
+2018-09-16
+
+What's in?
+- Support xclip as a clipboard utility on *nix
+- Support GNU Screen and tmux as clipboard fallback
+- Support Termux clipboard on Android
+
+-------------------------------------------------------------------------------
+
+googler 3.6
+2018-05-23
+
+What's in?
+- Decode auto-completion info as per charset in response header
+- Ignore trailing `/` in proxy
+- Some heath sites added to googler @t
+- User agent updated to Firefox 60
+- Availability on Fedora and openSUSE
+- More auto-generated packages
+
+-------------------------------------------------------------------------------
+
+googler 3.5
+2018-02-16
+
+What's in?
+- URL folding to show only domain name
+- Omniprompt key `c` to copy URL to clipboard
+- Support env var `DISABLE_PROMPT_COLOR` to disable prompt color (see #203)
+
+Note: Python 3.3 reached EOL, will not be supported anymore.
+
+-------------------------------------------------------------------------------
+
+googler 3.4
+2017-10-02
+
+What's in?
+- Support custom URL handler script or cli utility (option `--url-handler`)
+- Support text browser override with GUI browser (omniprompt key `O`)
+- A stunning project logo! (designed by @zmwangx)
+
+-------------------------------------------------------------------------------
+
+googler 3.3
+2017-08-17
+
+What's in?
+- Search auto-completion (using completion scripts)
+- Python 3.6 support
+- Automated release package builds using PackageCore
+
+-------------------------------------------------------------------------------
+
+googler 3.2
+2017-07-07
+
+What's in?
+- Basic authentication with `--proxy`
+- Option `--unfilter` to include similar results
+- New googler @ts : Manga Reader, Mac Rumors, OMG! Ubuntu!
+- Fix: skip certain card results with `--noua`
+- options `--json` and `--exact` decoupled
+
+-------------------------------------------------------------------------------
+
+googler 3.1
+2017-04-28
+
+What's in?
+- Search result metadata (e.g. IMDB rating)
+- Multi-site search
+- Browse numeric ranges at omniprompt
+- googler@ - Financial Times, The Pirate Bay added
+
+-------------------------------------------------------------------------------
+
+googler 3.0
+2017-03-12
+
+Modifications
+- Introducing [googler @t](https://github.com/jarun/googler#googler-t) add-on!
+- Open multiple indices from omniprompt
+- Open all indices from omniprompt
+- Option `--enable-browser-output` is now `--show-browser-logs`
+- Multiple bug fixes
+
+-------------------------------------------------------------------------------
+
+googler 2.9
+2016-12-18
+
+**NOTICE**
+- `googler` is on Debian and Ubuntu official releases now. In addition, there's
+a PPA in place to install the latest program releases from.
+
+Modifications
+- Omniprompt option to search exact keywords on auto-correction
+- Push cmdline arguments to readline history (simplifies editing the keywords)
+- Added check to ensure UTF-8 encoding
+- Support 3 HTTP redirections before failing to connect
+- Support environment variable https_proxy
+- Python 3.5.3 compliance for TLS 1.2
+- Removed deb package generation scripts
+
+-------------------------------------------------------------------------------
+
+googler 2.8
+2016-10-04
+
+Modifications
+- Add option --notweak to disable TCP optimizations and forced TLS 1.2.
+- Limited self-upgrade options to -U or --upgrade. Removed --update.
+
+-------------------------------------------------------------------------------
+
+googler v2.7
+2016-08-28
+
+Modifications
+- Show google services abstract with User Agent disabled.
+- In-place self-upgrade mechanism.
+- Fix integration with text-based browsers.
+- Set process title to googler if setproctitle is installed.
+
+-------------------------------------------------------------------------------
+
+googler v2.6
+2016-07-06
+
+Modifications
+- Option `--noua` to disable UA (default - enabled).
+- Logging and auto-completion script changes.
+
+-------------------------------------------------------------------------------
+
+googler v2.5.1
+2016-06-13
+
+Modifications
+- Enable TCP/IP optimizations only for Linux. This fails on OS X.
+
+NOTE: The optimizations do not work on Linux 2.4 and earlier either.
+
+-------------------------------------------------------------------------------
+
+googler v2.5
+2016-06-12
+
+**NOTICE:**
+- Python 2.x support is discontinued.
+- googler is now available on [Debian Sid](https://packages.debian.org/unstable/main/googler)
+
+Modifications
+- Invoking `googler` without search keywords shows omniprompt
+- Introduced options -h and --help to show program help and exit
+- Support cookie
+- Use TLS 1.2 (Python 3.4 and above)
+- Omniprompt key to unfilter filtered similar results
+- HTTPS proxy support (non-TLS 1.2 supported)
+- News time shown in cyan by default
+- Tons of code, logging and debug improvements (thanks Zhiming)
+
+-------------------------------------------------------------------------------
+
+googler v2.4.1
+2016-05-22
+
+**NOTICE:** Python 2.x support is deprecated now. While it's still
+possible to use Python 2.x by editing the shebang, we have found
+issues with Python 2.x (e.g. readline doesn't work) which don't
+have a satisfactory solution without impacting other features.
+Python 2.x support will be completely removed in the next version.
+
+Modifications
+- Sitelinks support
+- Customizable colours
+- Context in News results
+- .deb package for Debian and Ubuntu family
+- Basic support for terminal emulators having ANSI escape sequence support on Windows
+- New omniprompt option -f to jump to first results page
+- New omniprompt key -o to open the current search in browser
+- Shorter omniprompt
+- Non-interactive mode to fetch results and exit
+- JSON output support
+- A complete re-write of the HTML parser
+
+-------------------------------------------------------------------------------
+
+googler v2.3
+2016-04-23
+
+Modifications
+- Google Site Search support (option -w)
+- Auto-completion scripts for Zsh, Bash and Fish shells
+- All Google top level domains supported
+- Show time for news
+- Integrated omniprompt help
+- Move to argparse
+  - Additional long options easier to remember
+- Graceful SIGINT handler
+- Add version to debug logs
+AND ...
+- An *awesssome* asciinema recording for the README from Zhiming
+
+-------------------------------------------------------------------------------
+
+googler v2.2
+2016-03-12
+
+Modifications
+- Show quotes in text and title
+- Option to disable automatic spelling correction
+- User agent identifier added for all requests
+- Improved concise omniprompt with color inversion to work as a page separator
+- Set column size to auto when sys.stderr is not a tty
+- Decode HTTPS response in UTF-8
+- Dynamically detect python version using /usr/bin/env
+- Handle EOF (Ctrl-d) at omniprompt
+
+Improvements
+- Refactored code
+  - Modularized code for repetitive logic
+  - Unnecessary code removal
+- Dump full HTML response in debug mode
+- Homebrew integration
+- Travis integration
+- A better readme in 100% markdown and ToC with references
+
+-------------------------------------------------------------------------------
+
+googler v2.1
+2016-02-01
+
+Modifications
+- Project renamed to googler, same as the utility
+- Gzip compression to fetch data
+- Improved continuous search (works without the `g` key at prompt now. Check
+  Example 10 in README for exceptions)
+- Skip Google News, Images links and ads
+- Show skipped link count
+
+-------------------------------------------------------------------------------
+
+google-cli v2.0
+2016-01-09
+
+Modifications
+- IMPORTANT fix for issue #19: Google replaced "li" with "div" as search result
+  separator. Users must update to this release or latest dev version for
+  google-cli to work.
+- Handle formatting on Mac OS X in emacs eshell (or any terminal envornment
+  where number of columns returned is 0).
+- PEP 8 style adaptation. Thanks @shaggytwodope!
+
+-------------------------------------------------------------------------------
+
+google-cli v1.9
+2015-11-13
+
+Modifications
+- Skip results without any URL (Google custom results like time, define etc.).
+- Use readline library to support arrow keys in input.
+- Support installation on OSX. Thanks @ibaaj.
+- Pre-check negative index before attempting to open URL.
+- Handle exception: "socket.gaierror: [Errno -2] Name or service not known"
+  due to connection throttle on low-bandwidth.
+- Print correct Exception in case of connection timeout.
+
+-------------------------------------------------------------------------------
+
+google-cli v1.8
+2015-10-11
+
+Modification
+- Added timeout to HTTPSConnection()
+- Redirected stdout and stderr to suppress all warning & error messages when
+  opening results in Firefox
+
+-------------------------------------------------------------------------------
+
+google-cli v1.7
+2015-10-07
+
+Modification
+- Added support for redirection and piping
+- Used stderr instead of stdin to determine console geometry
+
+-------------------------------------------------------------------------------
+
+google-cli v1.6
+2015-09-12
+
+Modification
+- Changed incremental search key from s to g keeping in mind that users may use
+  g as the alias for googler.
+
+Fix
+- Handle httplib.BadStatusLine exception. This happens if the connection is
+  closed due to inactivity. Now googler will reconnect and re-issue the search.
+
+-------------------------------------------------------------------------------
+
+google-cli v1.5
+2015-09-04
+
+New capabilities
+- Incremental search support from the same running instance
+- Utility name changed to googler to void any copyright infringements
+
+-------------------------------------------------------------------------------
+
+google-cli v1.2
+2015-09-03
+
+New capabilities
+- Open result in browser using index number (thanks jeremija)
+- Google News support
+- Time limit search by hours
+- Country specific search (28 top-level domains added)
+- Add switch to enable debug logs
+
+Removal
+- Removed file type specific search option -f in favour of filetype:mime Google
+  keyword
+
+Fixes
+- Convert %22 to " (double quote) in URLs
+- Inputs other than n, p or number (+ Enter) exit
+- Fix failure to open URL with " (double quotes) in browser
+- Fix version information in manpage
+- Get rid of Google Chrome debug/error messages in console when opening URL
+
+-------------------------------------------------------------------------------
+
+google-cli v1.1
+2015-08-25
+
+New capabilities
+- Add Python 3.x support
+- Add UTF-8 request and response
+[both the contributions are from Narrat]
+
+NOTE: The next change in queue is to support opening the URLs in browser. As we
+can see during preliminary tests, there are several issues around Google Chrome
+and its mods. This release works as a stable release before we hop on.
+
+-------------------------------------------------------------------------------
+
+google-cli v1.0
+2015-08-22
+
+New capabilities
+- HTTPS support
+- Navigate as in regular google search
+- File type in search as an option
+- Time limited search (day, week, month, year)
+- Show full text snippet of search results
+- Unicode in URL support
+- Honour -j even if -n is not used and open the result in browser
+- Skip browser to show result in console for empty URL, e.g., first result of
+  'define hello'
+- Handle google redirections (error 302)
+- Throw error in case of google error due to unusual activity from IP
+
+Fixes
+- Adapt to new google HTML response
+- Fixed character encoding problem in URL e.g. double quotes (%22) changed to
+  %2522
+
+-------------------------------------------------------------------------------
