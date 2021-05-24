@@ -123,7 +123,7 @@ printBanner() {
 
 
 show_help() {
-	echo -e "\n\tUsage: \033[1;32m./recon.sh \033[35m[ -d domain ]\033[36m [ -w wordlist.txt ]\033[33m [ -gt GitHub-API_KEY ] \033[33m [ -st Shodan-API_KEY ]\033[m [ -q ] [ -f ]"
+	echo -e "\n\tUsage: \033[1;32m./recon.sh \033[35m[ -d domain ]\033[36m [ -w wordlist.txt ]\033[33m [ -g GitHub-API_KEY ] \033[33m [ -s Shodan-API_KEY ]\033[m [ -q ] [ -f ]"
 	echo -e "\n\t-d  | (required) : Your \033[1;35mtarget\033[m"
 	echo -e "\t-w  | (required) : Path to your \033[1;36mwordlist\033[m"
 	echo -e "\t-q  | (optional) : Quiet mode"
