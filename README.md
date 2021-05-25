@@ -118,7 +118,7 @@ Option     		 | Value
 - My GrepVuln function
 #### Open Redirect
 - My GrepVuln function
-### SQLi
+#### SQLi
 - Oneliners
 	- [gf](https://github.com/tomnomnom/gf) 
 	- [sqlmap](https://github.com/sqlmapproject/sqlmap)
