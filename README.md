@@ -3,6 +3,17 @@
 <br>
 👑 Recon 👑
 </h1>
+<p align="center">
+	<a href="https://twitter.com/Dirsoooo">
+		<img src="https://img.shields.io/twitter/follow/Dirsoooo?color=%2389DDFF&label=Follow%20%40Dirsoooo&style=flat-square"
+	</a>
+	<a href="https://mit-license.org/">
+		<img src="https://img.shields.io/github/license/dirsoooo/Recon?color=%23C3E88D&style=flat-square">
+	</a>
+	<a href="https://github.com/dirsoooo/Recon">
+		<img src="https://img.shields.io/github/repo-size/dirsoooo/Recon?color=%23FFCB6B&style=flat-square">
+	</a>
+</p>
 
 The step of recognizing a target in both Bug Bounties and Pentest can be very time-consuming. Thinking about it, I decided to create my own recognition script with all the tools I use most in this step.
 All construction of this framework is based on the methodologies of [@ofjaaah](https://twitter.com/ofjaaah) and [@Jhaddix](https://twitter.com/Jhaddix). These people were my biggest inspirations to start my career in Information Security and I recommend that you take a look at their content, you will learn a lot!<br>
