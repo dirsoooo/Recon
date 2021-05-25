@@ -1,1 +1,2 @@
-python3 /home/dirso/bounty-tools/framework/tools/CredStuff-Auxiliary/CredStuff_Auxiliary/googler/googler site:throwbin.io OR site:pastebin.com OR site:cdn-*anonfiles.com AND intext:@zego.com --count 100 --unfilter
+SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+python3 $SCRIPTPATH/tools/CredStuff-Auxiliary/CredStuff_Auxiliary/googler/googler site:throwbin.io OR site:pastebin.com OR site:cdn-*anonfiles.com AND intext:@zego.com --count 100 --unfilter
