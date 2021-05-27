@@ -116,7 +116,7 @@ printBanner() {
 	printf "\t░\n"                                                             
 	printf "\t\t Crafted with <3 by Dirso \033[33mv1.0\n\n"	
 	printf "\033[1;35m\tBased on The Bug Hunters Methodology v4.0.2 By @Jhaddix\n"	
-    printf "\t    and recon of recon, tips and tricks by @ofjaaah\n"
+    	printf "\t    and recon of recon, tips and tricks by @ofjaaah\n"
 	printf "\033[m\n"
 }
 
