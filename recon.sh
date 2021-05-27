@@ -103,7 +103,7 @@ lfi_parameters=(
 )
 
 printBanner() {
-	printf "\033[1;32m"
+	printf "\n\033[1;32m"
 	printf "\t██▀███  ▓█████  ▄████▄   ▒█████   ███▄    █ \n"
 	printf "\t▓██ ▒ ██▒▓█   ▀ ▒██▀ ▀█  ▒██▒  ██▒ ██ ▀█   █\n" 
 	printf "\t▓██ ░▄█ ▒▒███   ▒▓█    ▄ ▒██░  ██▒▓██  ▀█ ██▒\n"
@@ -154,7 +154,7 @@ wafDetect() {
 			wafw00f -i $1 -a -o $OUTFOLDER/subdomains/waf.txt > /dev/null
 			echo " ✅"
 		else
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█░█░█▀█░█▀▀░░░█▀▄░█▀▀░▀█▀░█▀▀░█▀▀░▀█▀\n"
 			printf "\t░█▄█░█▀█░█▀▀░░░█░█░█▀▀░░█░░█▀▀░█░░░░█░\n"
 			printf "\t░▀░▀░▀░▀░▀░░░░░▀▀░░▀▀▀░░▀░░▀▀▀░▀▀▀░░▀░\n"
@@ -208,7 +208,7 @@ asnEnum() {
 	[[ ! -d $output_folder ]] && mkdir $output_folder 2>/dev/null
 	org="$(echo $domain | cut -d '.' -f1)"
 	if [ $"$QUIET" != "True" ]; then
-		printf "\033[1;32m"
+		printf "\n\033[1;32m"
 		printf "\t░█▀█░█▀▀░█▀█░░░█▀▀░█▀█░█░█░█▄█░█▀▀░█▀▄░█▀█░▀█▀░▀█▀░█▀█░█▀█\n"
 		printf "\t░█▀█░▀▀█░█░█░░░█▀▀░█░█░█░█░█░█░█▀▀░█▀▄░█▀█░░█░░░█░░█░█░█░█\n"
 		printf "\t░▀░▀░▀▀▀░▀░▀░░░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀\n"
@@ -234,7 +234,7 @@ checkActive() {
 	output_folder="$2"
 	if [ "$(cat $subdomains | wc -l)" -ge "1" ]; then
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀█░█▀▀░▀█▀░▀█▀░█░█░█▀▀░░░█▀▄░█▀█░█▄█░█▀█░▀█▀░█▀█░█▀▀\n"
 			printf "\t░█▀█░█░░░░█░░░█░░▀▄▀░█▀▀░░░█░█░█░█░█░█░█▀█░░█░░█░█░▀▀█\n"
 			printf "\t░▀░▀░▀▀▀░░▀░░▀▀▀░░▀░░▀▀▀░░░▀▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀\n"
@@ -258,7 +258,7 @@ subdomainEnumeration() {
 		[[ ! -d $output_folder ]] && mkdir $output_folder 2>/dev/null
 		[[ ! -d $output_folder/knockpy/ ]] && mkdir $output_folder/knockpy/ 2>/dev/null
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀▀░█░█░█▀▄░░░█▀▀░█▀█░█░█░█▄█\n"
 			printf "\t░▀▀█░█░█░█▀▄░░░█▀▀░█░█░█░█░█░█\n"
 			printf "\t░▀▀▀░▀▀▀░▀▀░░░░▀▀▀░▀░▀░▀▀▀░▀░▀\n"
@@ -362,7 +362,7 @@ subdomainTakeover() {
 	if [ "$(cat $list | wc -l)" -ge "1" ]; then
 		[[ ! -d $output_folder ]] && mkdir $output_folder
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀▀░█░█░█▀▄░░░▀█▀░█▀█░█░█░█▀▀░█▀█░█░█░█▀▀░█▀▄\n"
 			printf "\t░▀▀█░█░█░█▀▄░░░░█░░█▀█░█▀▄░█▀▀░█░█░▀▄▀░█▀▀░█▀▄\n"
 			printf "\t░▀▀▀░▀▀▀░▀▀░░░░░▀░░▀░▀░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀\n"
@@ -387,7 +387,7 @@ dnsLookup() {
 	[[ ! -d $output_folder/DNS ]] && mkdir $output_folder/DNS
 	if [ "$(cat $domains | wc -l)" -ge "1" ]; then
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀▄░█▀█░█▀▀░░░█░░░█▀█░█▀█░█░█░█░█░█▀█\n"
 			printf "\t░█░█░█░█░▀▀█░░░█░░░█░█░█░█░█▀▄░█░█░█▀▀\n"
 			printf "\t░▀▀░░▀░▀░▀▀▀░░░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░\n"
@@ -429,7 +429,7 @@ favAnalysis() {
 		[[ ! -d $output_folder ]] && mkdir $output_folder
 		[[ ! -d $FAVOUT ]] && mkdir $FAVOUT
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀▀░█▀█░█░█░▀█▀░█▀▀░█▀█░█▀█░░░█▀█░█▀█░█▀█░█░░░█░█░█▀▀░▀█▀░█▀▀\n"
 			printf "\t░█▀▀░█▀█░▀▄▀░░█░░█░░░█░█░█░█░░░█▀█░█░█░█▀█░█░░░░█░░▀▀█░░█░░▀▀█\n"
 			printf "\t░▀░░░▀░▀░░▀░░▀▀▀░▀▀▀░▀▀▀░▀░▀░░░▀░▀░▀░▀░▀░▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀▀▀\n"
@@ -473,7 +473,7 @@ dirFuzz() {
 	output_folder_fuzz="$2"
 	if [ "$(cat $alive_domains_fuzz | wc -l)" -ge "1" ];then
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀▄░▀█▀░█▀▄░█▀▀░█▀▀░▀█▀░█▀█░█▀▄░█░█░░░█▀▀░█░█░▀▀█░▀▀█░▀█▀░█▀█░█▀▀\n"
 			printf "\t░█░█░░█░░█▀▄░█▀▀░█░░░░█░░█░█░█▀▄░░█░░░░█▀▀░█░█░▄▀░░▄▀░░░█░░█░█░█░█\n"
 			printf "\t░▀▀░░▀▀▀░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀░░▀░░░░▀░░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀░▀░▀▀▀\n"
@@ -495,7 +495,7 @@ googleHacking() {
 	output_folder_googledorks="$1"
 	if [ -n $output_folder_googledorks ]; then
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀▀░█▀█░█▀█░█▀▀░█░░░█▀▀░░░█░█░█▀█░█▀▀░█░█░▀█▀░█▀█░█▀▀\n"
 			printf "\t░█░█░█░█░█░█░█░█░█░░░█▀▀░░░█▀█░█▀█░█░░░█▀▄░░█░░█░█░█░█\n"
 			printf "\t░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀\n"
@@ -552,7 +552,7 @@ googleHacking() {
 ghDork() {
 	out_ghdork="$1"
 	if [ "$QUIET" != "True" ]; then
-		printf "\033[1;32m"
+		printf "\n\033[1;32m"
 		printf "\t░█▀▀░▀█▀░▀█▀░█░█░█░█░█▀▄░░░█▀▄░█▀█░█▀▄░█░█░█▀▀\n"
 		printf "\t░█░█░░█░░░█░░█▀█░█░█░█▀▄░░░█░█░█░█░█▀▄░█▀▄░▀▀█\n"
 		printf "\t░▀▀▀░▀▀▀░░▀░░▀░▀░▀▀▀░▀▀░░░░▀▀░░▀▀▀░▀░▀░▀░▀░▀▀▀\n"
@@ -679,7 +679,7 @@ credStuff() {
 	[[ ! -d $output_folder/credstuff ]] && mkdir $output_folder/credstuff
 	if [ "$domain" != "" ]; then
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀▀░█▀▄░█▀▀░█▀▄░░░█▀▀░▀█▀░█░█░█▀▀░█▀▀\n"
 			printf "\t░█░░░█▀▄░█▀▀░█░█░░░▀▀█░░█░░█░█░█▀▀░█▀▀\n"
 			printf "\t░▀▀▀░▀░▀░▀▀▀░▀▀░░░░▀▀▀░░▀░░▀▀▀░▀░░░▀░░\n"
@@ -699,7 +699,7 @@ screenshots() {
 	if [ -r $alive_domains_screenshots ]; then
 		if [ "$(cat $alive_domains_screenshots | wc -l)" -ge "1" ]; then
 			if [ "$QUIET" != "True" ]; then
-				printf "\033[1;32m"
+				printf "\n\033[1;32m"
 				printf "\t░█▀▀░█▀▀░█▀▄░█▀▀░█▀▀░█▀█░█▀▀░█░█░█▀█░▀█▀░█▀▀\n"
 				printf "\t░▀▀█░█░░░█▀▄░█▀▀░█▀▀░█░█░▀▀█░█▀█░█░█░░█░░▀▀█\n"
 				printf "\t░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░░▀░░▀▀▀\n"
@@ -720,7 +720,7 @@ portscan() {
 	if [ "$(cat $portscan_domains | wc -l)" -ge "1" ] && [ "$(cat $ips | wc -l)" -ge "1" ]; then
 		[[ ! -d $Ooutput_folder ]] && mkdir $output_folder 2>/dev/null
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀█░█▀█░█▀▄░▀█▀░░░█▀▀░█▀▀░█▀█░█▀█\n"
 			printf "\t░█▀▀░█░█░█▀▄░░█░░░░▀▀█░█░░░█▀█░█░█\n"
 			printf "\t░▀░░░▀▀▀░▀░▀░░▀░░░░▀▀▀░▀▀▀░▀░▀░▀░▀\n"
@@ -753,7 +753,7 @@ linkDiscovery() {
 	output_folder="$2"
 	if [ "$(cat $alive_domains | wc -l)" -ge "1" ]; then
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█░░░▀█▀░█▀█░█░█░░░█▀▄░▀█▀░█▀▀░█▀▀░█▀█░█░█░█▀▀░█▀▄░█░█\n"
 			printf "\t░█░░░░█░░█░█░█▀▄░░░█░█░░█░░▀▀█░█░░░█░█░▀▄▀░█▀▀░█▀▄░░█░\n"
 			printf "\t░▀▀▀░▀▀▀░▀░▀░▀░▀░░░▀▀░░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀░░▀░\n"
@@ -786,7 +786,7 @@ endpointsEnumeration() {
 	output_folder="$2"
 	if [ "$(cat $alive_domains | wc -l)" -ge "1" ]; then
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█▀▀░█▀█░█▀▄░█▀█░█▀█░▀█▀░█▀█░▀█▀░█▀▀░░░█▀▀░█▀█░█░█░█▄█░█▀▀░█▀▄░█▀█░▀█▀░▀█▀░█▀█░█▀█\n"
 			printf "\t░█▀▀░█░█░█░█░█▀▀░█░█░░█░░█░█░░█░░▀▀█░░░█▀▀░█░█░█░█░█░█░█▀▀░█▀▄░█▀█░░█░░░█░░█░█░█░█\n"
 			printf "\t░▀▀▀░▀░▀░▀▀░░▀░░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░░░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀\n"
@@ -827,7 +827,7 @@ findVuln() {
 	output_folder="$2"
 	if [ "$(cat $alive_domains | wc -l)" -ge "1" ]; then
 		if [ "$QUIET" != "True" ]; then
-			printf "\033[1;32m"
+			printf "\n\033[1;32m"
 			printf "\t░█░█░█░█░█░░░█▀█░█▀▀░█▀▄░█▀█░█▀▄░▀█▀░█░░░▀█▀░▀█▀░▀█▀░█▀▀░█▀▀\n"
 			printf "\t░▀▄▀░█░█░█░░░█░█░█▀▀░█▀▄░█▀█░█▀▄░░█░░█░░░░█░░░█░░░█░░█▀▀░▀▀█\n"
 			printf "\t░░▀░░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀░▀░▀▀░░▀▀▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀▀▀\n"
