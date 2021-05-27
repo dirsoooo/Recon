@@ -366,7 +366,7 @@ subdomainTakeover() {
 			printf "\t░█▀▀░█░█░█▀▄░░░▀█▀░█▀█░█░█░█▀▀░█▀█░█░█░█▀▀░█▀▄\n"
 			printf "\t░▀▀█░█░█░█▀▄░░░░█░░█▀█░█▀▄░█▀▀░█░█░▀▄▀░█▀▀░█▀▄\n"
 			printf "\t░▀▀▀░▀▀▀░▀▀░░░░░▀░░▀░▀░▀░▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀\n"
-			printf "\t\033[m\n"
+			printf "\033[m\n"
 		else
 			echo -e "\n\033[1;36m[+] Subdomain Takeover 🔎\033[m"
 		fi
@@ -796,10 +796,10 @@ endpointsEnumeration() {
 		fi
 		if [ "$QUIET" != "True" ]; then
 			echo -e "\n\033[36m>>>\033[35m Extracting URLs 🔍\033[m"
-			xargs -a $alive_domains -I@ sh -c "python3 $SCRIPTPATH/tools/ParamSpider/paramspider.py -d @ -l high"
+			xargs -a $alive_domains -I@ bash -c "python3 $SCRIPTPATH/tools/ParamSpider/paramspider.py -d @ -l high"
 		else
 			echo -e -n "\n\033[36m>>>\033[35m Extracting URLs 🔍\033[m"
-			xargs -a $alive_domains -I@ sh -c "python3 $SCRIPTPATH/tools/ParamSpider/paramspider.py -d @ -l high" > $SCRIPTPATH/paramspidertemp
+			xargs -a $alive_domains -I@ bash -c "python3 $SCRIPTPATH/tools/ParamSpider/paramspider.py -d @ -l high" > $SCRIPTPATH/paramspidertemp
 			rm $SCRIPTPATH/paramspidertemp
 			echo " ✅"
 		fi
@@ -809,7 +809,7 @@ endpointsEnumeration() {
 		sort -u $output_folder/all.txt -o $output_folder/all.txt
 		[[ ! -d $output_folder/js ]] && mkdir $output_folder/js
 		echo -e "\n\033[36m>>>\033[35m Enumerating Javascript files 🔍\033[m"
-		xargs -P 500 -a $DOMAINS -I@ sh -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs -I@ -P10 sh -c 'gospider -a -s "https://@" -d 2 | grep -Eo "(http|https)://[^/\"].*\.js+" | sed "s#\] \- #\n#g" | anew' | grep -Eo "(http|https)://[^/\"].*\.js+" >> $output_folder/js/js.txt
+		xargs -P 500 -a $DOMAINS -I@ bash -c 'nc -w1 -z -v @ 443 2>/dev/null && echo @' | xargs -I@ -P10 bash -c 'gospider -a -s "https://@" -d 2 | grep -Eo "(http|https)://[^/\"].*\.js+" | sed "s#\] \- #\n#g" | anew' | grep -Eo "(http|https)://[^/\"].*\.js+" >> $output_folder/js/js.txt
 		cat $alive_domains | waybackurls | grep -iE '\.js' | grep -iEv '(\.jsp|\.json)' >> $output_folder/js/js.txt
 		sort -u $output_folder/js/js.txt -o $output_folder/js/js.txt
 		jslen="$(cat $output_folder/js/js.txt | wc -l)"
