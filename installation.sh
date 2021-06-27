@@ -236,7 +236,7 @@ installTools() {
 				rm -f $SCRIPTPAATH/strap.sh
 			fi
 		fi
-		sudo pacman -S --needed python3 python-pip go amass sublist3r findomain masscan nmap wafw00f dnsrecon assetfinder subfinder httprobe httpx nuclei hakrawler waybackurls dalfox metabigor dnsx ffuf subjack gospider python-shodan figlet lolcat
+		sudo pacman -S --needed python3 python-pip go amass sublist3r findomain dnsenum masscan nmap wafw00f dnsrecon assetfinder subfinder httprobe httpx nuclei hakrawler waybackurls dalfox metabigor dnsx ffuf subjack gospider python-shodan figlet lolcat
 		installKnockpy
 	elif [ "$os" == "kali" ]; then
 		sudo apt install sublist3r figlet lolcat -y
