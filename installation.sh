@@ -76,51 +76,51 @@ installGo() {
 installGoTools() {
 	bannerInstall "Go tools"
 	bannerInstall "Assetfinder"
-	go get -u github.com/tomnomnom/assetfinder
+	go install github.com/tomnomnom/assetfinder@latest
 	bannerInstall "Subfinder"
-	GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+	go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 	bannerInstall "Httprobe"
-	go get -u github.com/tomnomnom/httprobe
+	go install github.com/tomnomnom/httprobe@latest
 	bannerInstall "Httpx"
-	GO111MODULE=on go get -v github.com/projectdiscovery/httpx/cmd/httpx
+	go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
 	bannerInstall "Nuclei"
-	GO111MODULE=on go get -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei
+	go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
 	nuclei -update-templates
 	bannerInstall "Hakrawler"
-	go get github.com/hakluke/hakrawler
+	go install github.com/hakluke/hakrawler@latest
 	bannerInstall "Waybackurls"
-	go get github.com/tomnomnom/waybackurls
+	go install github.com/tomnomnom/waybackurls@latest
 	bannerInstall "Ffuf"
-	go get -u github.com/ffuf/ffuf
+	go install github.com/ffuf/ffuf@latest
 	bannerInstall "Dalfox"
-	GO111MODULE=on go get -v github.com/hahwul/dalfox/v2
+	go install github.com/hahwul/dalfox/v2@latest
 	bannerInstall "Anti-burl"
-	go get -u github.com/tomnomnom/hacks/anti-burl
+	go install github.com/tomnomnom/hacks/anti-burl@latest
 	bannerInstall "Anew"
-	go get -u github.com/tomnomnom/anew
+	go install -v github.com/tomnomnom/anew@latest
 	bannerInstall "Qsreplace"
-	go get -u github.com/tomnomnom/qsreplace
+	go install github.com/tomnomnom/qsreplace@latest
 	bannerInstall "Gf"
-	go get -u github.com/tomnomnom/gf
+	go install github.com/tomnomnom/gf@latest
 	bannerInstall "Gospider"
-	go get -u github.com/jaeles-project/gospider
+	go install github.com/jaeles-project/gospider@latest
 	bannerInstall "Subjack"
-	go get github.com/haccer/subjack
+	go install github.com/haccer/subjack@latest
 	bannerInstall "Dnsx"
-	GO111MODULE=on go get -v github.com/projectdiscovery/dnsx/cmd/dnsx
+	go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
 	bannerInstall "Gxss"
-	go get -u github.com/KathanP19/Gxss
+	go install github.com/KathanP19/Gxss@latest
 	bannerInstall "Metabigor"
-	GO111MODULE=on go get github.com/j3ssie/metabigor
+	go install github.com/j3ssie/metabigor@latest
 	bannerInstall "Cf-check"
-	go get -u github.com/dwisiswant0/cf-check
+	$ go install github.com/dwisiswant0/cf-check@latest
 	bannerInstall "Naabu"
 	if [ "$os" == "kali" ] || [ "$os" == "debian" ] || [ "$os" == "parrot" ]; then
 		sudo apt install -y libpcap-dev
 	fi
-	GO111MODULE=on go get -v github.com/projectdiscovery/naabu/v2/cmd/naabu
+	go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
 	bannerInstall "Filter-Resolved"
-	go get github.com/tomnomnom/hacks/filter-resolved
+	go install github.com/tomnomnom/hacks/filter-resolved@latest
 	if [ -e /usr/local/go/bin ]; then
 		sudo mv $HOME/go/bin/* /usr/local/go/bin
 	else
